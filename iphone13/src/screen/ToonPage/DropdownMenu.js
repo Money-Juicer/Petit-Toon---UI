@@ -1,8 +1,8 @@
-// DropdownMenu.js
 import React, { useState } from "react";
 import useDetectClose from "./useDetectClose";
-import useIconClick from './useIconClick';
-import * as Styled from "./MenuStyles"; 
+import useIconClick from "./useIconClick";
+import * as Styled from "./MenuStyles";
+import * as Button from "../Buttons/Button_styled"
 
 const menuTmp = () => {
   // ...
@@ -26,7 +26,7 @@ const DropdownMenu = () => {
       <Styled.DropdownContainer>
         {/*header menu button 헤더상의 메뉴 버튼*/}
         {/*0. menu button*/}
-        <Styled.DropdownButton 
+        <Button.DropdownButton
           onClick={() => {
             myPageHandler();
             handleIconClick(0);
@@ -36,18 +36,20 @@ const DropdownMenu = () => {
           <img
             src={
               process.env.PUBLIC_URL +
-              (menuIconClicked ? "./images/menu_icon_clicked.png" : "./images/menu_icon.png")
+              (menuIconClicked
+                ? "./images/menu_icon_clicked.png"
+                : "./images/menu_icon.png")
             }
             alt="메뉴 아이콘"
           />
-        </Styled.DropdownButton>
+        </Button.DropdownButton>
         {/*header menu open 오픈된 메뉴*/}
         <Styled.Menu $isDropped={myPageIsOpen}>
           <Styled.MenuTitle>메뉴|Menu</Styled.MenuTitle>
           <Styled.MenuContainer>
             {/*header menu안의 buttons*/}
             {/*1. store icon */}
-            <Styled.MenuButton
+            <Button.MenuButton
               onClick={() => {
                 menuTmp();
                 handleIconClick(1);
@@ -56,14 +58,16 @@ const DropdownMenu = () => {
               <img
                 src={
                   process.env.PUBLIC_URL +
-                  (storeIconClicked ? "./images/store_clicked.png" : "./images/store.png")
+                  (storeIconClicked
+                    ? "./images/store_clicked.png"
+                    : "./images/store.png")
                 }
                 alt="store icon"
               />
               <span>스토어</span>
-            </Styled.MenuButton>
+            </Button.MenuButton>
             {/*2. search-engine icon */}
-            <Styled.MenuButton
+            <Button.MenuButton
               onClick={() => {
                 menuTmp();
                 handleIconClick(2);
@@ -72,14 +76,16 @@ const DropdownMenu = () => {
               <img
                 src={
                   process.env.PUBLIC_URL +
-                  (searchIconClicked ? "./images/search-engine_clicked.png" : "./images/search-engine.png")
+                  (searchIconClicked
+                    ? "./images/search_clicked.png"
+                    : "./images/search.png")
                 }
-                alt="search-engine icon"
+                alt="search icon"
               />
               <span>검색</span>
-            </Styled.MenuButton>
+            </Button.MenuButton>
             {/*3 map icon */}
-            <Styled.MenuButton
+            <Button.MenuButton
               onClick={() => {
                 menuTmp();
                 handleIconClick(3);
@@ -88,14 +94,16 @@ const DropdownMenu = () => {
               <img
                 src={
                   process.env.PUBLIC_URL +
-                  (mapIconClicked ? "./images/map_clicked.png" : "./images/map.png")
+                  (mapIconClicked
+                    ? "./images/map_clicked.png"
+                    : "./images/map.png")
                 }
                 alt="map icon"
               />
               <span>탐색</span>
-            </Styled.MenuButton>
+            </Button.MenuButton>
             {/*4. petit icon */}
-            <Styled.MenuButton
+            <Button.MenuButton
               onClick={() => {
                 menuTmp();
                 handleIconClick(4);
@@ -104,14 +112,16 @@ const DropdownMenu = () => {
               <img
                 src={
                   process.env.PUBLIC_URL +
-                  (petitIconClicked ? "./images/petit_clicked.png" : "./images/petit.png")
+                  (petitIconClicked
+                    ? "./images/petit_clicked.png"
+                    : "./images/petit.png")
                 }
                 alt="petit icon"
               />
               <span>이주의 쁘띠</span>
-            </Styled.MenuButton>
+            </Button.MenuButton>
             {/*5. event icon */}
-            <Styled.MenuButton
+            <Button.MenuButton
               onClick={() => {
                 menuTmp();
                 handleIconClick(5);
@@ -120,14 +130,16 @@ const DropdownMenu = () => {
               <img
                 src={
                   process.env.PUBLIC_URL +
-                  (eventIconClicked ? "./images/event_clicked.png" : "./images/event.png")
+                  (eventIconClicked
+                    ? "./images/event_clicked.png"
+                    : "./images/event.png")
                 }
                 alt="event icon"
               />
               <span>공지/이벤트</span>
-            </Styled.MenuButton>
+            </Button.MenuButton>
             {/*6. mypage icon */}
-            <Styled.MenuButton
+            <Button.MenuButton
               onClick={() => {
                 menuTmp();
                 handleIconClick(6);
@@ -136,12 +148,14 @@ const DropdownMenu = () => {
               <img
                 src={
                   process.env.PUBLIC_URL +
-                  (mypageIconClicked ? "./images/mypage_clicked.png" : "./images/mypage.png")
+                  (mypageIconClicked
+                    ? "./images/mypage_clicked.png"
+                    : "./images/mypage.png")
                 }
                 alt="mypage icon"
               />
               <span>마이페이지</span>
-            </Styled.MenuButton>
+            </Button.MenuButton>
           </Styled.MenuContainer>
         </Styled.Menu>
         {/* 삼각형 요소 */}
